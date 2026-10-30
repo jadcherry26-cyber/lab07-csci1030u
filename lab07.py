@@ -7,6 +7,14 @@
 
 
 def count_occurrences(target, values):
+
+    if (len(values) == 0):
+        return 0
+    if (values[:1] == target):
+        return count_occurrences(target, values[1:]) + 1
+    else:
+        return count_occurrences(target, values[1:])
+
     # TODO (Part 1, recursion): return how many times `target` appears in the list
     #   `values`.
     #   Base case: an empty list contains it 0 times.
