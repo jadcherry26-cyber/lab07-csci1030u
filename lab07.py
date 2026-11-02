@@ -7,23 +7,21 @@
 
 
 def count_occurrences(target, values):
-
     if (len(values) == 0):
         return 0
-    if (values[:1] == target):
+    if values[0] == target:
         return count_occurrences(target, values[1:]) + 1
     else:
         return count_occurrences(target, values[1:])
 
-    # TODO (Part 1, recursion): return how many times `target` appears in the list
-    #   `values`.
-    #   Base case: an empty list contains it 0 times.
-    #   Recursive case: 1 (if the first item equals `target`, otherwise 0) plus the
-    #   count in the rest of the list, values[1:].
-    pass
-
-
 def is_sorted(values):
+    if (len(values) == 0) or (len(values) == 1):
+        return
+    while True:
+        if len(values[1:]) <= len(values[1:]) + 1:
+            return 1
+        else:
+            return False
     # TODO (Part 2, recursion): return True if `values` is in non-decreasing order
     #   (every item is <= the one after it), otherwise False.
     #   Base case: a list of 0 or 1 items is already sorted.
