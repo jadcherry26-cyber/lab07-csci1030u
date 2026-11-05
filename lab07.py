@@ -14,7 +14,6 @@ def is_sorted(values):
     else:
         return False
 
-
 class Rectangle:
     def __init__(self, width, height):
         self.width = width
